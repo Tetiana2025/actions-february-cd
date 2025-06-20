@@ -43,5 +43,5 @@ jobs:
         run: gcloud container clusters get-credentials cluster-1 --region us-central1 --project united-idea-459823-m1
 
       - name: Install app
-        run: helm upgrade --install flask ./flask
+        run: helm upgrade --install flask ./flask --set deployment.image.repositiry=${{ inputs.image }} --set deployment.image.tag=${{ inputs.tag }}
       
